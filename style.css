@@ -1,0 +1,734 @@
+@import url('https://fonts.googleapis.com/css2?family=Rammetto+One&display=swap');
+/* font-family: 'Rammetto One', cursive; */
+
+* {
+    margin: 0;
+    padding: 0;
+    color: white;
+}
+
+body {
+    background-color: rgb(0, 26, 57);
+}
+
+/* Utility class To be Added in Html Class name */
+.flex {
+    display: flex;
+    align-items: center;
+}
+
+
+body::-webkit-scrollbar {
+    width: 10px;
+    background: rgba(88, 88, 88, 0.553);
+}
+
+body::-webkit-scrollbar-thumb {
+    background: rgb(255, 238, 0);
+    border-radius: 50px;
+}
+
+
+@media screen and (max-width:167px){
+   #home-page,#contact,#about,#skill,#project,.top-scrollbtn,.navbar {
+        display: none ;
+    }
+    body:after{
+        content:"We Don't Support your Device";
+        position:absolute;
+        top:0;
+        left:0;
+        background:black;
+        height:100vh;
+        width:100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color:red;
+        text-align: center;
+    }
+}
+/* -------------------------------------------------------------- NavBar -------------------------------------------------------------- */
+.navbar {
+    height: 50px;
+    width: 100%;
+    background: rgba(0, 124, 177, 0.333);
+    justify-content: space-between;
+}
+
+.logo {
+    margin-left: 20px;
+    gap: 10px;
+}
+
+.logo img {
+    height: 40px;
+}
+
+.logo a {
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 22px;
+}
+
+.navbar ul {
+    margin-right: 20px;
+    gap: 25px;
+}
+
+.navbar ul li {
+    list-style: none;
+}
+
+.navbar ul li a {
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.navbar ul li a:hover {
+    color: rgb(255, 221, 109);
+}
+
+
+.menu-icon {
+    position: relative;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    height: 30px;
+    width: 40px;
+    margin-right: 20px;
+    cursor: pointer;
+}
+
+.menu-icon:hover {
+    opacity: .9;
+}
+
+.menu-icon-bar {
+    height: 6px;
+    width: 100%;
+    background: white;
+    border-radius: 50px;
+}
+
+.menu-icon-bar::before {
+    content: "";
+    position: absolute;
+    top: 0px;
+    height: 6px;
+    width: 100%;
+    background: white;
+    border-radius: 50px;
+}
+
+.menu-icon-bar::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    height: 6px;
+    width: 100%;
+    background: white;
+    border-radius: 50px;
+}
+
+
+@media screen and (max-width:700px) {
+    .navbar ul {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        position: absolute;
+        top: 50px;
+        height: calc(100vh - 50px);
+        width: 100%;
+        background: rgb(14, 14, 14);
+        overflow: hidden;
+    }
+
+    .menu-icon {
+        display: flex;
+    }
+}
+
+
+@media screen and (max-width:300px){
+    .logo a {
+        font-size: 10px;;
+    }
+}
+/* ---------------------------------------------------------------- Home Page ---------------------------------------------------------------- */
+.home {
+    min-height: calc(100vh - 50px);
+    height: fit-content;
+    padding: 20px 0;
+    margin-top: 20px;
+    flex-direction: column;
+    justify-content: center;
+
+}
+
+.top-scrollbtn {
+    height: 50px;
+    width: 50px;
+    background-color: bisque;
+    border-radius: 50%;
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    justify-content: center;
+    z-index: 100;
+}
+
+.top-scrollbtn>img {
+    width: 40px;
+}
+
+.top-scrollbtn:hover {
+    background-color: darkcyan;
+}
+
+.top-scrollbtn>img:hover {
+    filter: grayscale(1)
+}
+
+.home-container {
+    justify-content: center;
+    gap: 100px;
+    height: fit-content;
+}
+
+.home-left>img {
+    height: 350px;
+}
+
+.home-right h1 {
+    text-align: center;
+    font-family: 'Rammetto One', cursive;
+}
+
+.home-right h1:nth-child(1) {
+    font-size: 70px;
+}
+
+.home-right h1 span {
+    color: rgb(255, 0, 119);
+}
+
+.home-bottom {
+    height: 70px;
+    width: 100%;
+    justify-content: center;
+    gap: 100px;
+    margin-top: 40px;
+}
+
+.home-bottom a {
+    padding: 10px 20px;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.235);
+    border-radius: 50px;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+    gap: 10px;
+}
+
+.home-bottom a img {
+    height: 20px;
+}
+
+.home-bottom a:hover {
+    opacity: .85;
+}
+
+.page-title {
+    justify-content: center;
+    flex-direction: column;
+    margin: 10px;
+}
+
+.page-title hr {
+    width: 200px;
+    height: 6px;
+    border-radius: 50px;
+    border: 0;
+    background: white;
+    margin-top: 10px;
+    margin-bottom: 50px;
+}
+
+
+@media screen and (max-width:850px) {
+    .home-container {
+        flex-direction: column;
+    }
+}
+
+@media screen and (max-width:500px) {
+    .home-bottom {
+        gap: 10px;
+    }
+
+    .home-bottom a {
+        padding: 5px 10px;
+        font-size: 13px;
+        gap: 5px;
+    }
+
+    .home-right h1 {
+        font-size: 20px;
+    }
+}
+
+@media screen and (max-width:300px) {
+    .home-left>img {
+        width: 100%;
+    }
+
+    .page-title hr {
+        width: 80%;
+    }
+
+    .home-right h1 {
+        font-size: 15px;
+    }
+
+    .home-bottom a>img {
+        display: none;
+    }
+
+    .home-bottom a {
+        font-size: 10px;
+    }
+}
+
+/* ----------------------------------------------------------------------- Project Page ----------------------------------------------------------------------- */
+.product-page {
+    min-height: 100vh;
+    height: fit-content;
+    padding: 20px 0;
+    width: 100%;
+    background-image: url("img/about\ bg.jpg");
+    background-position: center;
+    background-size: cover;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.product-page>.page-title h1 {
+    color: black;
+}
+
+.product-page>.page-title hr {
+    background-color: black;
+}
+
+.project-card-container {
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.project-card {
+    height: 300px;
+    width: 240px;
+    border-radius: 10px;
+    border-top: 1px solid white;
+    border-left: 1px solid white;
+    box-shadow: 0 0 5px black;
+    backdrop-filter: blur(2px);
+}
+
+.project-card-title {
+    height: 40px;
+    justify-content: center;
+}
+
+.project-card-title a {
+    justify-content: center;
+    font-weight: bold;
+    font-size: 20px;
+    color: rgb(0, 32, 0);
+    background: white;
+    padding: 3px 10px;
+    border-radius: 50px;
+    cursor: pointer;
+    text-decoration: none;
+
+}
+
+.project-card-title p:hover {
+    color: rgb(64, 64, 64);
+}
+
+.project-card-img {
+    height: 130px;
+    justify-content: center;
+    margin: 5px;
+}
+
+.project-card-img img {
+    height: 100%;
+    width: 100%;
+}
+
+.project-card-disc {
+    height: 110px;
+    margin: 5px;
+    justify-content: center;
+    text-align: center;
+    color: rgb(45, 45, 45);
+    font-size: 17px;
+    font-weight: bold;
+    color: rgb(0, 0, 0);
+    background: rgba(255, 255, 255, 0.16);
+}
+
+@media screen and (max-width:250px) {
+    .project-card {
+        width: 98%;
+    }
+    .project-card-disc{
+        font-size: 15px;
+    }
+}
+
+
+/* -------------------------------------------------------------------------Skill Page ------------------------------------------------------------------- */
+
+.skill-page {
+    min-height: 100vh;
+    height: fit-content;
+    padding: 20px 0;
+    width: 100%;
+    position: relative;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.skill-card-container {
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-top: 30px;
+}
+
+.skill-card {
+    height: 130px;
+    width: 280px;
+    background-color: rgba(255, 255, 255, 0.758);
+    border-radius: 10px;
+    justify-content: space-between;
+}
+
+.skill-card-progress {
+    position: relative;
+    width: 120px;
+    height: 100%;
+    overflow: hidden;
+}
+
+.circle {
+    fill: none;
+    stroke-width: 13px;
+}
+
+.circle1 {
+    stroke: rgb(128, 128, 128);
+}
+
+.circle2 {
+    stroke: rgb(61, 0, 58);
+    /* stroke-dasharray: 315px; */
+    stroke-linecap: round;
+}
+
+.html-progressbar {
+    stroke-dasharray: 267.75px;
+}
+
+.css-progressbar {
+    stroke-dasharray: 245.7px;
+}
+
+.js-progressbar {
+    stroke-dasharray: 239.4px;
+}
+
+.jq-progressbar {
+    stroke-dasharray: 252px;
+}
+
+.react-progressbar {
+    stroke-dasharray: 195.3px;
+}
+
+.percent {
+    position: absolute;
+    top: 37%;
+    left: 32%;
+    font-weight: bold;
+    color: black;
+    font-size: 25px;
+    ;
+}
+
+.skill-card-disc {
+    width: 150px;
+}
+
+.skill-card-disc-title {
+    height: 30px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 20px;
+    color: rgb(255, 255, 255);
+    background: black;
+    border-radius: 50px;
+    justify-content: center;
+    margin-right: 10px;
+    margin-top: 2px
+}
+
+.skill-card-disc-disc {
+    height: 88px;
+    text-align: center;
+    color: black;
+    margin-right: 10px;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+@media screen and (max-width:500px) {
+    .skill-card-disc-disc {
+        font-size: 15px;
+    }
+}
+
+@media screen and (max-width:300px) {
+    .skill-card {
+        width: 98%;
+    }
+
+    .percent {
+        top: 40%;
+        left: 28%;
+        font-size: 20px;
+    }
+
+    .skill-card-disc {
+        width: 50%;
+    }
+
+    .skill-card-progress {
+        width: 50%;
+    }
+
+    .circle {
+        zoom: .8;
+        position: absolute;
+        top: 10%;
+        left: 0;
+    }
+
+    .skill-card-disc-disc {
+        font-size: 12px;
+        margin: 0;
+    }
+
+    .skill-card-disc-title {
+        height: fit-content;
+        font-size: 17px;
+        margin: 0;
+    }
+
+}
+
+@media screen and (max-width:200px){
+    .skill-card{
+        zoom:.8;
+    }
+}
+
+
+
+
+/* -------------------------------------------------------------------------About Page ------------------------------------------------------------------- */
+.about-page {
+    min-height: 100vh;
+    height: fit-content;
+    padding: 20px 0;
+    width: 100%;
+    background-image: linear-gradient(180deg, rgb(0, 26, 57), rgb(0, 2, 5));
+    flex-direction: column;
+    justify-content: center;
+}
+
+.about-container {
+    width: 80%;
+    height: fit-content;
+    margin: 50px 10%;
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.about-info {
+    justify-content: center;
+    gap: 50px;
+    flex-wrap: wrap;
+}
+
+.info-card {
+    height: 200px;
+    width: 400px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(255, 228, 196, 0.644);
+}
+
+.info-card .info-title {
+    justify-content: center;
+    width: 100%;
+    height: 50px;
+    gap: 20px;
+    font-size: 23px;
+    font-weight: bold;
+}
+
+.info-card .info-title img {
+    height: 40px;
+}
+
+.info-disc {
+    width: 90%;
+    height: 130px;
+    margin: 0 5%;
+    text-align: center;
+    margin-top: 20px;
+    font-size: 17px;
+}
+
+
+@media screen and (max-width:500px) {
+    .info-card {
+        width: 98%;
+    }
+
+    .info-card .info-title {
+        font-size: 13px;
+        gap:5px;
+    }
+
+
+.info-card .info-title img {
+    width:20px;
+}
+.info-card .info-disc{
+    font-size: 10px;;
+}
+}
+
+/* ---------------------------------------------------------------- Contact Page ---------------------------------------------------------------- */
+.contact-page {
+    min-height: 100vh;
+    height: fit-content;
+    padding: 20px 0;
+    width: 100%;
+    justify-content: center;
+    flex-direction: column;
+    background-image: linear-gradient(360deg, rgb(0, 26, 57), black);
+}
+
+.contact-page>form {
+    min-height: 200px;
+    height: fit-content;
+    max-height: 400px;
+    width: 500px;
+    background-color: white;
+    flex-direction: column;
+    border-radius: 10px;
+
+}
+
+.contact-page>form input {
+    height: 40px;
+    width: 90%;
+    margin: 10px 5%;
+    outline: none;
+    border: 0;
+    color: black;
+    font-size: 15px;
+    box-shadow: 0 0 5px black;
+    border-radius: 50px;
+    padding: 5px;
+}
+
+.contact-page>form textarea {
+    height: 150px;
+    width: 90%;
+    margin: 10px 5%;
+    max-width: 450px;
+    outline: none;
+    border: 0;
+    color: black;
+    font-size: 15px;
+    box-shadow: 0 0 5px black;
+    border-radius: 10px;
+    padding: 5px;
+}
+
+.contact-page button {
+    height: 35px;
+    width: 100px;
+    color: rgb(255, 255, 255);
+    font-size: 20px;
+    font-weight: bold;
+    justify-content: center;
+    margin-bottom: 10px;
+    border: 0;
+    outline: none;
+    background: rgba(0, 80, 55, 0.975);
+    border-radius: 50px;
+    cursor: pointer;
+}
+
+.contact-page button:hover {
+    opacity: .8;
+}
+
+.socialmedia {
+    height: 60px;
+    width: 300px;
+    margin: 10px;
+    background: white;
+    justify-content: space-evenly;
+    border-radius: 50px;
+
+}
+
+.socialmedia-icon>a img {
+    height: 40px;
+    cursor: pointer;
+}
+
+.socialmedia-icon>a img:hover {
+    filter: grayscale(1)
+}
+
+
+@media screen and (max-width:600px) {
+    .contact-page>form {
+        width: 98%;
+    }
+
+    .socialmedia {
+        width: 98%;
+        height: 40px;
+    }
+
+    .socialmedia-icon>a img {
+        height: 30px;
+    }
+}
